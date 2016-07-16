@@ -388,6 +388,10 @@ public class CameraActivity extends Activity
         mDeveloperMenuEnabled = true;
     }
 
+    public void disableDeveloperMenu() {
+        mDeveloperMenuEnabled = false;
+    }
+
     public static void resetFirstStartAfterScreenOn() {
         sFirstStartAfterScreenOn = false;
     }
@@ -1809,10 +1813,10 @@ public class CameraActivity extends Activity
         }
         if (mPowerShutter && mInCameraApp) {
             getWindow().addPrivateFlags(
-                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_SYSTEM_KEYS);
         } else {
             getWindow().clearPrivateFlags(
-                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+                    WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_SYSTEM_KEYS);
         }
     }
 
